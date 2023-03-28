@@ -126,6 +126,7 @@ const Controller = {
     postRequestedJob: async (req, res) => {
         try {
             const { usuarios_id, id } = req.body
+            console.log('postRequestedJob => ', usuarios_id, id)
             await registrarSolicitud(usuarios_id, id)
             res.send({
                 status: 'OK',
