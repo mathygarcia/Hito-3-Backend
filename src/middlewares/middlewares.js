@@ -3,8 +3,8 @@ const { secretKey } = require("./secretKey")
 
 
 const checkCredentialsExists = (req, res, next) => {
-    const { email, contraseña } = req.body
-    if (!email || !contraseña) {
+    const { email, pass } = req.body
+    if (!email || !pass) {
         res
             .status(401)
             .send({ message: "No se recibieron las credenciales en esta consulta" })
