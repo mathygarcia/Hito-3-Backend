@@ -20,9 +20,9 @@ const registerUser = async (usuario) => {
 const registrarTrabajo = async (trabajo) => {
     try {
         console.log("registrarTrabajo", trabajo)
-        let { titulo, contacto, email, descripcion, usuarios_id } = trabajo;
-        const values = [titulo, contacto, email, descripcion, usuarios_id];
-        const consulta = 'INSERT INTO trabajos (titulo, contacto, email, descripcion, usuarios_id ) VALUES ($1, $2, $3, $4, $5)';
+        let { titulo, contacto, email, descripcion, sueldo, usuarios_id } = trabajo;
+        const values = [titulo, contacto, email, descripcion, sueldo, usuarios_id];
+        const consulta = 'INSERT INTO trabajos (titulo, contacto, email, descripcion, sueldo, usuarios_id ) VALUES ($1, $2, $3, $4, $5 ,$6)';
         await getJobsDB.query(consulta, values);
     } catch (error) {
         console.log("registrarTrabajo", error)
